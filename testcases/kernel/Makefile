@@ -9,11 +9,8 @@ include $(top_srcdir)/include/mk/env_pre.mk
 
 # NOTE (garrcoop): mce-test isn't integrated into the build.
 
-# Build syscalls in all scenarios.
-SUBDIRS			:= syscalls
-
 # Build lib
-SUBDIRS			+= lib
+SUBDIRS			:= lib
 
 # KEEP THIS LIST ALPHABETIZED PLEASE!
 SUBDIRS			+= connectors \
@@ -42,7 +39,6 @@ SUBDIRS			+= connectors \
 
 ifeq ($(WITH_KVM_TESTSUITE),yes)
 SUBDIRS			+= kvm
-
 endif
 
 ifeq ($(ANDROID),1)
